@@ -1,0 +1,243 @@
+[
+  {
+    "model": "api.about",
+    "pk": 1,
+    "fields": {
+      "name": "Mohtashim Usmani",
+      "role_line": "Data Scientist · Full Stack Developer · Python Developer",
+      "bio_paragraph_1": "I'm Mohtashim Usmani — a Data Scientist, Full Stack Web Developer, and Python enthusiast with a deep passion for building intelligent systems.",
+      "bio_paragraph_2": "From training machine learning models to architecting full-stack web applications with Django and React, I bridge the gap between data and user experience. I thrive at the intersection of AI and software engineering.",
+      "bio_paragraph_3": "I'm always learning, always building — whether it's a fraud detection system, a data analytics dashboard, or an AI-powered portfolio.",
+      "location": "Available Globally · Remote First",
+      "email": "mohtashimusmani09@email.com",
+      "github_url": "https://github.com/MohtashimUsmani",
+      "linkedin_url": "https://www.linkedin.com/in/mohtashim-usmani/",
+      "twitter_url": "https://twitter.com",
+      "is_available": true,
+      "profile_image": "",
+      "resume_file": ""
+    }
+  },
+  {
+    "model": "api.aboutstat",
+    "pk": 1,
+    "fields": { "about": 1, "value": "3+",  "label": "Years Experience", "order": 1 }
+  },
+  {
+    "model": "api.aboutstat",
+    "pk": 2,
+    "fields": { "about": 1, "value": "15+", "label": "Projects Built",   "order": 2 }
+  },
+  {
+    "model": "api.aboutstat",
+    "pk": 3,
+    "fields": { "about": 1, "value": "5+",  "label": "ML Models",        "order": 3 }
+  },
+  {
+    "model": "api.aboutstat",
+    "pk": 4,
+    "fields": { "about": 1, "value": "10+", "label": "Tech Stack",       "order": 4 }
+  },
+  {
+    "model": "api.skill",
+    "pk": 1,
+    "fields": { "name": "Python",          "category": "language",  "level": 95, "icon_name": "FaPython",      "color": "#3776AB", "description": "Primary language for data science, automation, and backends.", "is_active": true, "order": 1 }
+  },
+  {
+    "model": "api.skill",
+    "pk": 2,
+    "fields": { "name": "Django",          "category": "framework", "level": 90, "icon_name": "SiDjango",      "color": "#092E20", "description": "REST APIs, auth, admin, ORM — full backend mastery.", "is_active": true, "order": 2 }
+  },
+  {
+    "model": "api.skill",
+    "pk": 3,
+    "fields": { "name": "React",           "category": "frontend",  "level": 85, "icon_name": "FaReact",       "color": "#61DAFB", "description": "Component-based UIs, hooks, state management.", "is_active": true, "order": 3 }
+  },
+  {
+    "model": "api.skill",
+    "pk": 4,
+    "fields": { "name": "JavaScript",      "category": "language",  "level": 82, "icon_name": "FaJs",          "color": "#F7DF1E", "description": "ES6+, async/await, DOM manipulation.", "is_active": true, "order": 4 }
+  },
+  {
+    "model": "api.skill",
+    "pk": 5,
+    "fields": { "name": "PostgreSQL",      "category": "database",  "level": 85, "icon_name": "SiPostgresql",  "color": "#336791", "description": "Complex queries, indexing, schema design.", "is_active": true, "order": 5 }
+  },
+  {
+    "model": "api.skill",
+    "pk": 6,
+    "fields": { "name": "Machine Learning","category": "ai_ml",     "level": 88, "icon_name": "SiScikitlearn", "color": "#F89939", "description": "Supervised & unsupervised models, model evaluation.", "is_active": true, "order": 6 }
+  },
+  {
+    "model": "api.skill",
+    "pk": 7,
+    "fields": { "name": "Pandas",          "category": "data",      "level": 92, "icon_name": "SiPandas",      "color": "#150458", "description": "Data wrangling, transformation, analysis.", "is_active": true, "order": 7 }
+  },
+  {
+    "model": "api.skill",
+    "pk": 8,
+    "fields": { "name": "NumPy",           "category": "data",      "level": 90, "icon_name": "SiNumpy",       "color": "#013243", "description": "Numerical computing, array operations.", "is_active": true, "order": 8 }
+  },
+  {
+    "model": "api.skill",
+    "pk": 9,
+    "fields": { "name": "Data Analysis",   "category": "analytics", "level": 88, "icon_name": "FaChartBar",    "color": "#FF4081", "description": "EDA, visualization, statistical insights.", "is_active": true, "order": 9 }
+  },
+  {
+    "model": "api.skill",
+    "pk": 10,
+    "fields": { "name": "APIs",            "category": "backend",   "level": 87, "icon_name": "SiFastapi",     "color": "#009688", "description": "REST API design, integration, documentation.", "is_active": true, "order": 10 }
+  },
+  {
+    "model": "api.project",
+    "pk": 1,
+    "fields": {
+      "number": "01",
+      "title": "Fraud Detection ML System",
+      "description": "End-to-end machine learning pipeline for real-time financial fraud detection using ensemble models. Achieves 97.8% accuracy with sub-100ms inference time.",
+      "badge": "Machine Learning",
+      "accent": "#FF1744",
+      "tech_stack": ["Python", "Scikit-learn", "XGBoost", "Pandas", "FastAPI", "PostgreSQL"],
+      "github_url": "https://github.com",
+      "live_url": "https://example.com",
+      "thumbnail": "",
+      "is_featured": true,
+      "is_active": true,
+      "order": 1
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 2,
+    "fields": {
+      "number": "02",
+      "title": "AI Portfolio Website",
+      "description": "Cinematic full-stack portfolio built with React and Django, featuring interactive data visualizations and smooth animations.",
+      "badge": "Full Stack",
+      "accent": "#E040FB",
+      "tech_stack": ["React", "Django", "Python", "Framer Motion", "PostgreSQL"],
+      "github_url": "https://github.com",
+      "live_url": "https://example.com",
+      "thumbnail": "",
+      "is_featured": true,
+      "is_active": true,
+      "order": 2
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 3,
+    "fields": {
+      "number": "03",
+      "title": "Hospital Management System",
+      "description": "Comprehensive web application for managing patient records, appointments, staff scheduling, and billing with real-time notifications.",
+      "badge": "Web App",
+      "accent": "#00BCD4",
+      "tech_stack": ["Django", "React", "PostgreSQL", "REST API", "Bootstrap"],
+      "github_url": "https://github.com",
+      "live_url": "https://example.com",
+      "thumbnail": "",
+      "is_featured": true,
+      "is_active": true,
+      "order": 3
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 4,
+    "fields": {
+      "number": "04",
+      "title": "FinTech Analytics Dashboard",
+      "description": "Interactive financial analytics platform with real-time data streaming, predictive modeling, and custom KPI reporting for portfolio management.",
+      "badge": "Analytics",
+      "accent": "#FFD600",
+      "tech_stack": ["Python", "Pandas", "Plotly", "Django", "React", "WebSocket"],
+      "github_url": "https://github.com",
+      "live_url": "https://example.com",
+      "thumbnail": "",
+      "is_featured": true,
+      "is_active": true,
+      "order": 4
+    }
+  },
+  {
+    "model": "api.experience",
+    "pk": 1,
+    "fields": {
+      "year": "2021",
+      "title": "Started Web Development",
+      "organization": "Self-Taught",
+      "description": "Dived into HTML, CSS, JavaScript and began building responsive websites from scratch. Fell in love with the craft of creating interactive experiences on the web.",
+      "tags": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      "icon_name": "FaCode",
+      "side": "left",
+      "order": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.experience",
+    "pk": 2,
+    "fields": {
+      "year": "2022",
+      "title": "Mastered Python & Django",
+      "organization": "Backend Development",
+      "description": "Deep-dived into Python development and the Django framework. Built REST APIs, worked with ORMs, implemented authentication systems.",
+      "tags": ["Python", "Django", "REST API", "PostgreSQL"],
+      "icon_name": "FaPython",
+      "side": "right",
+      "order": 2,
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.experience",
+    "pk": 3,
+    "fields": {
+      "year": "2023",
+      "title": "Built Full Stack Projects",
+      "organization": "Freelance & Personal",
+      "description": "Combined React frontend with Django backend to build complete full-stack applications including Hospital Management System.",
+      "tags": ["React", "Django", "Full Stack", "Docker"],
+      "icon_name": "FaServer",
+      "side": "left",
+      "order": 3,
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.experience",
+    "pk": 4,
+    "fields": {
+      "year": "2024",
+      "title": "Entered Data Science & ML",
+      "organization": "Data Engineering",
+      "description": "Transitioned into data science, mastering machine learning workflows, data analysis pipelines, and building production-grade ML systems.",
+      "tags": ["ML", "Pandas", "Scikit-learn", "NumPy"],
+      "icon_name": "FaBrain",
+      "side": "right",
+      "order": 4,
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.sociallink",
+    "pk": 1,
+    "fields": { "platform": "github",   "label": "GitHub",   "url": "https://github.com",   "handle": "github.com/mohtashim",    "icon_name": "FaGithub",   "is_active": true, "order": 1 }
+  },
+  {
+    "model": "api.sociallink",
+    "pk": 2,
+    "fields": { "platform": "linkedin", "label": "LinkedIn", "url": "https://linkedin.com", "handle": "linkedin.com/in/mohtashim","icon_name": "FaLinkedin", "is_active": true, "order": 2 }
+  },
+  {
+    "model": "api.sociallink",
+    "pk": 3,
+    "fields": { "platform": "email",    "label": "Email",    "url": "mailto:mohtashim@email.com", "handle": "mohtashim@email.com", "icon_name": "FaEnvelope", "is_active": true, "order": 3 }
+  },
+  {
+    "model": "api.sociallink",
+    "pk": 4,
+    "fields": { "platform": "twitter",  "label": "Twitter",  "url": "https://twitter.com",  "handle": "@mohtashim_dev",           "icon_name": "FaTwitter",  "is_active": true, "order": 4 }
+  }
+]
