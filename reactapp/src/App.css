@@ -1,0 +1,56 @@
+/* ═══════════════════════════════════════════
+   APP LAYOUT
+   ═══════════════════════════════════════════ */
+
+.app {
+  min-height: 100vh;
+  background: var(--bg-root);
+  position: relative;
+}
+
+/* Ambient gradient blobs (decorative, global) */
+.app::before {
+  content: '';
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(114,1,55,0.18) 0%, transparent 70%);
+  top: -200px;
+  right: -200px;
+  pointer-events: none;
+  z-index: 0;
+  animation: blobFloat1 18s ease-in-out infinite;
+}
+
+.app::after {
+  content: '';
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(89,0,84,0.14) 0%, transparent 70%);
+  bottom: -150px;
+  left: -100px;
+  pointer-events: none;
+  z-index: 0;
+  animation: blobFloat2 22s ease-in-out infinite;
+}
+
+main { position: relative; z-index: 2; }
+
+/* ─── Responsive breakpoints ─── */
+@media (max-width: 1024px) {
+  :root { --container: 960px; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sp-section: 80px 0;
+  }
+  .container { padding: 0 20px; }
+}
+
+@media (max-width: 480px) {
+  :root { --sp-section: 60px 0; }
+}

@@ -1,0 +1,3 @@
+/* Entry CSS — imports global styles */
+@import './styles/globals.css';
+@import './styles/animations.css';

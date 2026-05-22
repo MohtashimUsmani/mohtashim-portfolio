@@ -1,0 +1,200 @@
+/* ═══════════════════════════════════════════
+   NAVBAR STYLES
+   ═══════════════════════════════════════════ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 22px 0;
+  transition: padding 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.navbar--scrolled {
+  padding: 14px 0;
+  background: rgba(7, 0, 5, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--bd-glow);
+  box-shadow: 0 4px 30px rgba(114,1,55,0.18);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ── Logo ── */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar__logo-icon {
+  color: var(--neon-red);
+  font-size: 1.25rem;
+  filter: drop-shadow(0 0 8px var(--neon-red));
+}
+
+.navbar__logo-text {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.navbar__logo-first {
+  background: linear-gradient(135deg, #fff 0%, var(--neon-pink) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar__logo-dot {
+  color: var(--neon-red);
+  -webkit-text-fill-color: var(--neon-red);
+  text-shadow: 0 0 8px var(--neon-red);
+}
+
+/* ── Desktop links ── */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.navbar__link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tx-secondary);
+  padding: 6px 14px;
+  border-radius: 6px;
+  position: relative;
+  transition: color var(--tr-fast);
+  display: block;
+  text-decoration: none;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--tx-primary);
+}
+
+.navbar__link-bar {
+  position: absolute;
+  bottom: 2px;
+  left: 14px;
+  right: 14px;
+  height: 1.5px;
+  background: var(--neon-red);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+  box-shadow: 0 0 8px var(--neon-red);
+}
+
+.navbar__link:hover .navbar__link-bar,
+.navbar__link--active .navbar__link-bar {
+  transform: scaleX(1);
+}
+
+/* ── CTA button ── */
+.navbar__cta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--neon-red);
+  border: 1px solid var(--neon-red);
+  border-radius: 6px;
+  padding: 8px 20px;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.navbar__cta:hover {
+  background: var(--neon-red);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(255,23,68,0.5);
+}
+
+/* ── Hamburger ── */
+.navbar__hamburger {
+  display: none;
+  color: var(--tx-primary);
+  font-size: 1.3rem;
+  margin-left: auto;
+  transition: color var(--tr-fast);
+  background: none;
+  border: none;
+}
+
+.navbar__hamburger:hover { color: var(--neon-red); }
+
+/* ── Mobile menu ── */
+.navbar__mobile {
+  position: fixed;
+  top: 0; right: 0;
+  width: min(340px, 85vw);
+  height: 100vh;
+  background: rgba(7,0,5,0.97);
+  border-left: 1px solid var(--bd-glow);
+  backdrop-filter: blur(20px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+  width: 100%;
+}
+
+.navbar__mobile-link {
+  font-family: var(--font-body);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--tx-secondary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--bd-subtle);
+  transition: color var(--tr-fast);
+  text-decoration: none;
+}
+
+.navbar__mobile-link:hover { color: var(--tx-primary); }
+
+.navbar__mobile-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--neon-red);
+  letter-spacing: 0.1em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .navbar__links,
+  .navbar__cta       { display: none; }
+  .navbar__hamburger { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .navbar__logo-text { font-size: 1.1rem; }
+}

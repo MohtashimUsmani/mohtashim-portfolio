@@ -1,0 +1,204 @@
+/* ═══════════════════════════════════════════
+   EXPERIENCE / TIMELINE STYLES
+   ═══════════════════════════════════════════ */
+
+.experience { position: relative; overflow: hidden; }
+
+/* ── Timeline wrapper ── */
+.timeline {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Center line */
+.timeline__line {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: rgba(114,1,55,0.2);
+}
+
+.timeline__line-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--c3) 20%, var(--c4) 80%, transparent);
+  transform-origin: top;
+  box-shadow: 0 0 12px rgba(114,1,55,0.5);
+}
+
+/* ── Timeline Item ── */
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  gap: 0;
+  padding: 28px 0;
+  position: relative;
+}
+
+/* Left-side card: goes in col 1, dot in col 2, spacer in col 3 */
+.timeline-item--left .timeline-card   { grid-column: 1; justify-self: end;   max-width: 440px; }
+.timeline-item--left .timeline-dot    { grid-column: 2; }
+.timeline-item--left .timeline-spacer { grid-column: 3; }
+
+/* Right-side card: spacer in col 1, dot in col 2, card in col 3 */
+.timeline-item--right .timeline-spacer { grid-column: 1; }
+.timeline-item--right .timeline-dot    { grid-column: 2; }
+.timeline-item--right .timeline-card   { grid-column: 3; justify-self: start; max-width: 440px; }
+
+/* ── Card ── */
+.timeline-card {
+  padding: 28px;
+  width: 100%;
+  transition: border-color var(--tr-smooth), box-shadow var(--tr-smooth);
+}
+
+.timeline-card:hover {
+  border-color: var(--bd-bright);
+  box-shadow: var(--glow-md);
+}
+
+.timeline-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.timeline-card__org {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tx-accent);
+}
+
+.timeline-card__year {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--neon-red);
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 8px rgba(255,23,68,0.4);
+}
+
+.timeline-card__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--tx-primary);
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.timeline-card__desc {
+  font-size: 0.87rem;
+  color: var(--tx-secondary);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.timeline-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.timeline-card__tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--tx-muted);
+  background: rgba(114,1,55,0.15);
+  border: 1px solid var(--bd-glow);
+  border-radius: 4px;
+  padding: 2px 9px;
+}
+
+/* ── Center dot ── */
+.timeline-dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.timeline-dot__icon {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c2), var(--c4));
+  border: 2px solid var(--c3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tx-accent);
+  font-size: 1.1rem;
+  box-shadow: 0 0 20px rgba(114,1,55,0.6);
+  position: relative;
+  z-index: 2;
+  animation: dotPulse 3s ease-in-out infinite;
+}
+
+.timeline-dot__pulse {
+  position: absolute;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(114,1,55,0.3);
+  animation: dotPulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Spacer */
+.timeline-spacer { width: 100%; }
+
+/* ── Blob ── */
+.experience__blob {
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(114,1,55,0.1) 0%, transparent 70%);
+  right: -100px; top: 20%;
+  filter: blur(70px);
+  pointer-events: none;
+  animation: blobFloat1 20s ease-in-out infinite;
+}
+
+/* ── Responsive ── */
+@media (max-width: 780px) {
+  .timeline__line { left: 24px; }
+
+  .timeline-item {
+    grid-template-columns: 60px 1fr;
+    gap: 0 16px;
+    padding: 20px 0;
+  }
+
+  /* All cards go right on mobile */
+  .timeline-item--left  .timeline-card,
+  .timeline-item--right .timeline-card {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    max-width: 100%;
+  }
+
+  .timeline-item--left  .timeline-dot,
+  .timeline-item--right .timeline-dot {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .timeline-item--left  .timeline-spacer,
+  .timeline-item--right .timeline-spacer { display: none; }
+}
+
+@media (max-width: 480px) {
+  .timeline-card { padding: 22px 18px; }
+}

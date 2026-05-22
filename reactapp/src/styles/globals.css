@@ -1,0 +1,164 @@
+/* ═══════════════════════════════════════════
+   GLOBAL STYLES — Mohtashim Usmani Portfolio
+   ═══════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap');
+
+/* ─── CSS Variables ─── */
+:root {
+  /* Brand Colors */
+  --c1: #46000D;
+  --c2: #5E0009;
+  --c3: #720137;
+  --c4: #590054;
+  --c5: #42002E;
+
+  /* Neon Accents */
+  --neon-red:     #FF1744;
+  --neon-pink:    #F50057;
+  --neon-magenta: #E040FB;
+  --neon-purple:  #AA00FF;
+
+  /* Backgrounds */
+  --bg-root:   #070005;
+  --bg-deep:   #0B0008;
+  --bg-glass:  rgba(114, 1, 55, 0.12);
+  --bg-card:   rgba(66, 0, 46, 0.25);
+
+  /* Text */
+  --tx-primary:   #FFFFFF;
+  --tx-secondary: rgba(255,255,255,0.75);
+  --tx-muted:     rgba(255,255,255,0.42);
+  --tx-accent:    #FF4D8D;
+
+  /* Borders */
+  --bd-glow:   rgba(114, 1, 55, 0.55);
+  --bd-subtle: rgba(255,255,255,0.07);
+  --bd-bright: rgba(255, 23, 68, 0.4);
+
+  /* Fonts */
+  --font-display: 'Orbitron', monospace;
+  --font-body:    'Syne', sans-serif;
+  --font-mono:    'Share Tech Mono', monospace;
+
+  /* Spacing */
+  --sp-section: 120px 0;
+  --container:  1200px;
+
+  /* Transitions */
+  --tr-fast:   0.18s ease;
+  --tr-smooth: 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --tr-bounce: 0.5s  cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Shadows / Glows */
+  --glow-sm: 0 0 14px rgba(114,1,55,0.6);
+  --glow-md: 0 0 30px rgba(114,1,55,0.5), 0 0 60px rgba(114,1,55,0.2);
+  --glow-neon: 0 0 12px var(--neon-red), 0 0 28px rgba(255,23,68,0.3);
+  --shadow-card: 0 8px 40px rgba(0,0,0,0.55);
+}
+
+/* ─── Reset ─── */
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-root);
+  color: var(--tx-primary);
+  overflow-x: hidden;
+  line-height: 1.65;
+  cursor: none;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button { cursor: none; border: none; background: none; font-family: inherit; }
+input, textarea { font-family: inherit; }
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-root); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--c3), var(--c4));
+  border-radius: 10px;
+}
+
+/* ─── Selection ─── */
+::selection { background: rgba(114,1,55,0.55); color: #fff; }
+
+/* ─── Utilities ─── */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.section { padding: var(--sp-section); position: relative; }
+
+.glass-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--bd-glow);
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glow-text {
+  text-shadow: 0 0 18px var(--neon-pink), 0 0 40px rgba(255,0,110,0.28);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tx-accent);
+  border: 1px solid rgba(255, 77, 141, 0.35);
+  border-radius: 4px;
+  padding: 3px 10px;
+  display: inline-block;
+}
+
+/* ─── Custom Cursor ─── */
+#cursor-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--neon-red);
+  position: fixed; top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 0 10px var(--neon-red);
+  transition: transform 0.05s;
+}
+
+#cursor-ring {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,23,68,0.55);
+  position: fixed; top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%,-50%);
+  transition: transform 0.14s ease, width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+}
+
+#cursor-ring.hovered {
+  width: 56px; height: 56px;
+  border-color: var(--neon-pink);
+}
+
+/* ─── Gradient noise overlay ─── */
+.noise-overlay {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
