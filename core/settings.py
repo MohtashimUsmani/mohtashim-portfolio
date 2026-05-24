@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import os
 from pathlib import Path
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://b4a.run",
+    "https://*.b4a.run",  # Wildcard to catch variations
+]
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
